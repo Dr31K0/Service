@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Minimaliste - Andre</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: white;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Section styles */
+        .section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            transition: background-color 0.8s ease; /* Smooth background transition */
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .navbar a:hover {
+            color: #ff8c00;
+        }
+
+        /* Background styles for sections */
+        #home {
+            background-image: url('images/background-image.png'); /* Correct path to the image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        #portfolio, #contact {
+            background: linear-gradient(135deg, #1d1f3a 30%, #e84a27 70%, #4828b2);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Smooth background transitions for different sections */
+        #portfolio {
+            transition: background-color 1s ease;
+        }
+
+        #contact {
+            transition: background-color 1s ease;
+        }
+
+        /* Home section text styles */
+        #home h1 {
+            font-size: 4em;
+            margin: 0;
+            color: white;
+        }
+
+        #home p {
+            font-size: 1.8em;
+            margin: 20px 0;
+            color: white;
+        }
+
+        .cta-button {
+            padding: 15px 30px;
+            background-color: white; /* Button background white */
+            color: black; /* Button text color black */
+            border: none;
+            cursor: pointer;
+            margin-top: 30px;
+            font-size: 1.5em;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transition */
+        }
+
+        .cta-button:hover {
+            background-color: #f0f0f0; /* Light gray hover effect */
+            color: black; /* Keep the text black on hover */
+            transform: scale(1.05);
+        }
+
+        /* Portfolio section */
+        #portfolio h1 {
+            font-size: 3.5em;
+            margin-bottom: 30px;
+            margin-top: -100px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .portfolio-item {
+            width: 100%;
+            padding-top: 100%;
+            background: linear-gradient(135deg, #111 0%, #444 100%); /* Dark gray to light gray gradient */
+            position: relative;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+
+        .portfolio-item span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2em;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Contact section */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        label, input, textarea, button {
+            margin-top: 10px;
+            font-size: 1em;
+        }
+
+        input, textarea {
+            padding: 10px;
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            color: white;
+        }
+
+        button {
+            padding: 12px;
+            background-color: white; /* Removed gradient from the button */
+            color: black; /* Set text to black */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #f0f0f0; /* Light gray hover effect */
+            transform: scale(1.05);
+        }
+
+        /* Icon */
+        .icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-size: cover;
+            background-image: url('https://www.freeiconspng.com/uploads/contact-icon-png-17.png');
+            cursor: pointer;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#home">Accueil</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <h1>Andre</h1>
+        <p>Product Designer</p>
+        <a href="#portfolio">
+            <button class="cta-button">Voir mon portfolio</button>
+        </a>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <h1>Portfolio</h1>
+        <div class="portfolio-grid">
+            <div class="portfolio-item"><span>Projet 1</span></div>
+            <div class="portfolio-item"><span>Projet 2</span></div>
+            <div class="portfolio-item"><span>Projet 3</span></div>
+            <div class="portfolio-item"><span>Projet 4</span></div>
+            <div class="portfolio-item"><span>Projet 5</span></div>
+            <div class="portfolio-item"><span>Projet 6</span></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h1>Contact</h1>
+        <form class="contact-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Votre email..." required>
+
+            <label for="phone">Numéro de téléphone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Votre numéro..." required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Votre message..." required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <!-- Icon (present on all sections) -->
+    <div class="icon">
+        <a href="#contact" style="display: block; width: 100%; height: 100%;"></a>
+    </div>
+
+    <!-- JavaScript for smooth scrolling -->
+    <script>
+        document.querySelectorAll('.navbar a, .cta-button, .icon a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                const offset = targetSection.offsetTop;
+
+                window.scrollTo({
+                    top: offset,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
