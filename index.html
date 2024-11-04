@@ -23,7 +23,7 @@
             text-align: center;
             padding: 20px;
             position: relative;
-            transition: background-color 0.8s ease; /* Smooth background transition */
+            transition: background-color 0.8s ease;
         }
 
         /* Navbar */
@@ -52,7 +52,7 @@
 
         /* Background styles for sections */
         #home {
-            background-image: url('images/background-image.png'); /* Correct path to the image */
+            background-image: url('./images/background-image.png'); /* Updated path for GitHub Pages */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -67,55 +67,49 @@
         }
 
         /* Smooth background transitions for different sections */
-        #portfolio {
-            transition: background-color 1s ease;
-        }
-
-        #contact {
+        #portfolio, #contact {
             transition: background-color 1s ease;
         }
 
         /* Home section text styles */
         #home h1 {
-            font-size: 4em;
+            font-size: 3.5em;
             margin: 0;
             color: white;
         }
 
         #home p {
-            font-size: 1.8em;
+            font-size: 1.5em;
             margin: 20px 0;
             color: white;
         }
 
         .cta-button {
             padding: 15px 30px;
-            background-color: white; /* Button background white */
-            color: black; /* Button text color black */
+            background-color: white;
+            color: black;
             border: none;
             cursor: pointer;
             margin-top: 30px;
             font-size: 1.5em;
             border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transition */
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
         }
 
         .cta-button:hover {
-            background-color: #f0f0f0; /* Light gray hover effect */
-            color: black; /* Keep the text black on hover */
+            background-color: #f0f0f0;
             transform: scale(1.05);
         }
 
         /* Portfolio section */
         #portfolio h1 {
-            font-size: 3.5em;
+            font-size: 3em;
             margin-bottom: 30px;
-            margin-top: -100px;
         }
 
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             width: 100%;
             max-width: 1200px;
@@ -124,7 +118,7 @@
         .portfolio-item {
             width: 100%;
             padding-top: 100%;
-            background: linear-gradient(135deg, #111 0%, #444 100%); /* Dark gray to light gray gradient */
+            background: linear-gradient(135deg, #111 0%, #444 100%);
             position: relative;
             border-radius: 8px;
             transition: transform 0.2s;
@@ -167,8 +161,8 @@
 
         button {
             padding: 12px;
-            background-color: white; /* Removed gradient from the button */
-            color: black; /* Set text to black */
+            background-color: white;
+            color: black;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -176,7 +170,7 @@
         }
 
         button:hover {
-            background-color: #f0f0f0; /* Light gray hover effect */
+            background-color: #f0f0f0;
             transform: scale(1.05);
         }
 
@@ -245,25 +239,8 @@
     </section>
 
     <!-- Icon (present on all sections) -->
-    <div class="icon">
+    <div class="icon" aria-label="Contact Shortcut">
         <a href="#contact" style="display: block; width: 100%; height: 100%;"></a>
     </div>
-
-    <!-- JavaScript for smooth scrolling -->
-    <script>
-        document.querySelectorAll('.navbar a, .cta-button, .icon a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                const offset = targetSection.offsetTop;
-
-                window.scrollTo({
-                    top: offset,
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
